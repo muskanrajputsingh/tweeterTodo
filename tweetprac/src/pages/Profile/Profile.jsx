@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import './Profile.css';
 
 const Profile = () => {
-    const url = 'http://localhost:14000';
+    const url = "https://tweetertodobackend.onrender.com";
 
     const [det , setDet] = useState({});
     const [tweet, setTweet] = useState([]);
