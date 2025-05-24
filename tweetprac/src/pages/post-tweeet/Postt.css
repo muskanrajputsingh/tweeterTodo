@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.postt-container {
+    height: 100vh;
+    width: 100%;
+    background-image: url('https://t4.ftcdn.net/jpg/02/94/37/55/360_F_294375555_tpcdo43DC1XFr6kpSv4v4bEsmcY1GgWz.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-box {
+    height: auto;
+    width: 60%;
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+}
+
+.post-box form {
+    width: 100%;
+}
+
+.post-box textarea {
+    width: calc(100% - 20px);
+    height: 200px; 
+    padding: 10px;
+    margin-bottom: 10px;
+    resize:none;
+    overflow:-moz-hidden-unscrollable;
+}
+
+.post-box button {
+    width: 100%;
+    padding: 10px;
+    background-color:palevioletred;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.post-box button:hover {
+    background-color:plum;
+}

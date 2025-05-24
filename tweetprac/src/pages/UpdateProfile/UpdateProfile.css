@@ -1,0 +1,17 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.update-prof-container{
+    height: 100vh;
+    width: 100%;
+    background-color: pink;
+}
+.update-prof-box{
+    height:80vh;
+    width:500px;
+    margin:auto auto;
+    background-color:whitesmoke;
+}
+
