@@ -5,7 +5,7 @@ import './Postt.css';
 import Nav from '../Nav';
 
 const PostTweet = () => {
-  const url = 'http://localhost:14000';
+  const url = "https://tweetertodobackend.onrender.com";
 
     const [rooms, setrooms] = useState({
         content: '',
