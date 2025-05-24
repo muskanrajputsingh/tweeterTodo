@@ -3,7 +3,7 @@ import './nav.css';
 import { Link } from 'react-router-dom';
 import { useState,useEffect } from 'react';
 const Nav = () => {
-  const url = 'http://localhost:14000';
+  const url = "https://tweetertodobackend.onrender.com";
   
   const [profile,setProfile]=useState([]);
   useEffect(() => {
