@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import Nav from '../Nav';
 
 const UpdateProfile = () => {
-    const url = 'http://localhost:14000';
+    const url = "https://tweetertodobackend.onrender.com";
 
     const { id } = useParams();
     const [tweet, setTweet] = useState([]);
