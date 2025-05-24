@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
 
 const Registration = () => {
-  const url = 'http://localhost:14000';
+  const url = "https://tweetertodobackend.onrender.com";
   const [user, setUser] = useState({ 
     username: "", 
     email: "", 
