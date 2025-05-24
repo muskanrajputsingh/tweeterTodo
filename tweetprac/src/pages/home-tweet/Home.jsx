@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Nav from '../Nav';
 const Home = () => {
 
-  const url = 'http://localhost:14000';
+  const url = "https://tweetertodobackend.onrender.com";
 
     const [rooms, setrooms] = useState({
         content: '',
