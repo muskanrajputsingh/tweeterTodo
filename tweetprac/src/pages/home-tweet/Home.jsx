@@ -4,6 +4,8 @@ import { useState,useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Nav from '../Nav';
+import { ads } from './dataa';
+import { add2 } from './dataa';
 const Home = () => {
 
   const url = "https://tweetertodobackend.onrender.com";
@@ -13,8 +15,8 @@ const Home = () => {
         imag:'',
        });
       const [tweet,setTweet]=useState([]);
-      const [news,setnews]=useState([]);
-      const [adds,setadds]=useState([]);
+      // const [news,setnews]=useState([]);
+      // const [adds,setadds]=useState([]);
       const [like,setlike]=useState(25);
       const [currentDate, setCurrentDate] = useState(new Date());
       const [addprof,setAddProf]=useState([])
@@ -63,42 +65,6 @@ const Home = () => {
         })
         .then(data=>{
             setTweet(data);
-        })
-        .catch(err=>{
-            console.log(err)
-        })
-    },[])
-
-    useEffect(() => {
-      const fetchData = async () => {
-          try {
-              const response = await fetch(`https://newsapi.org/v2/everything?q=keyword&apiKey=6ea5886e20694e2991df8eef2c8707e5`);
-              const data = await response.json();
-              const selectedArticles = data.articles.filter((_, index) => index % 2 === 0);
-              setnews(selectedArticles.slice(0, 4));
-          } catch (error) {
-              console.error('Error fetching data:', error);
-          }
-      };
-
-      fetchData(); // Initial fetch
-      const intervalId = setInterval(fetchData, 5000); // Fetch data every 5 seconds
-
-      return () => clearInterval(intervalId); // Cleanup on unmount
-  }, []);
-
-    useEffect(()=>{
-      fetch('https://newsapi.org/v2/everything?q=keyword&apiKey=6ea5886e20694e2991df8eef2c8707e5')
-      .then(response=>{
-        if(!response.ok){
-            throw new Error('failed to fetch')
-        }
-        return response.json()
-        })
-        .then(data=>{
-            const selectedArticles = data.articles.filter((_, index) => index % 2 === 0);
-            const slicedArticles = selectedArticles.slice(0,2);
-            setadds(slicedArticles);
         })
         .catch(err=>{
             console.log(err)
@@ -172,16 +138,19 @@ const Home = () => {
           </div>
           <div className="shortcut">
           <p><i style={{color:"#0c1b4b"}} class="fa-regular fa-newspaper"></i> Latest News</p>
-          {news.map((article, index) => (
-            <a key={index} href={article.url} target="_blank">
-              {article.urlToImage ? (
-                <img src={article.urlToImage} height="250px" width="400px" alt="News" />
-              ) : (
-                <img src="placeholder-image-url" height="250px" width="400px" alt="not found" />
-              )}
-             <h6>{article.title}</h6> 
-            </a>
-          ))}
+          
+          {/* //addddd */}
+          {ads.map((ad, index) => (
+         <a key={index} href={ad.link} target="_blank" rel="noopener noreferrer">
+          <img
+            src={ad.image}
+            height="250px"
+            width="400px"
+            alt="Advertisement"
+          />
+          <h6>{ad.description}</h6>
+          </a>
+         ))}
         </div>
     </div>
 
@@ -278,13 +247,20 @@ const Home = () => {
           <h4>advertisement</h4>
           <a href="#">close</a>
         </div>
+
+        {/* // addddddd*/}
        
-        {adds.map((article, index) => (
-            <div className="sidebar-ads" key={index}>
-            <a href={article.url} target="_blank"><img src={article.urlToImage} alt="Advertisement" /></a>
-            <h6>{article.title}</h6>
-          </div>
-          ))}
+        {add2.map((ad, index) => (
+         <a key={index} href={ad.link} target="_blank" rel="noopener noreferrer">
+          <img
+            src={ad.image}
+            height="250px"
+            width="400px"
+            alt="Advertisement"
+          />
+          <h6>{ad.description}</h6>
+          </a>
+        ))}
         </div>
         </div>
       </div>
